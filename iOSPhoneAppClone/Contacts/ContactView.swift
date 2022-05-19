@@ -14,7 +14,6 @@ struct ContactView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
                 List {
                     Section {
                         MyCard
@@ -24,23 +23,22 @@ struct ContactView: View {
                     Section {
                         ForEach(searchResult, id: \.identifier) { contact in
                             NavigationLink(destination: ContactsDetailView(contactinfo: contact)) {
-                                Text("\(contact.givenName) \(contact.middleName)  \(contact.familyName) \(contact.nameSuffix)")
+                                Text(contact.getDisplayName)
                             }
                         }
                     }
                 }
-                
+            
                 .listStyle(.inset)
-            }
-            .searchable(text: $queryString, placement: .navigationBarDrawer(displayMode: .always))
-            .navigationTitle("Contacts")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button("Groups") {
-                        
+                .searchable(text: $queryString, placement: .navigationBarDrawer(displayMode: .always))
+                .navigationTitle("Contacts")
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button("Groups") {
+                            
+                        }
                     }
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
+                    ToolbarItem(placement: .navigationBarTrailing) {
                     Button() {
                         
                     }label: {

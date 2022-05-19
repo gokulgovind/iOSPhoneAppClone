@@ -25,7 +25,7 @@ struct TabarView: View {
                 }
             DialPadView()
                 .tabItem {
-                    Label("Keypad", systemImage: "keyboard")
+                    Label("Keypad", systemImage: "circle.grid.3x3.fill")
                 }
             VoiceMailView()
                 .tabItem {

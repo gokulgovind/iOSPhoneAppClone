@@ -13,7 +13,7 @@ class ContactsViewModel:ObservableObject {
     
     func getContacts() {
         
-        let keys = [CNContactFormatter.descriptorForRequiredKeys(for: .fullName)]
+        let keys = [CNContactFormatter.descriptorForRequiredKeys(for: .fullName), CNContactPhoneNumbersKey as CNKeyDescriptor]
         let request = CNContactFetchRequest(keysToFetch: keys)
         
         let contactStore = CNContactStore()
@@ -27,5 +27,24 @@ class ContactsViewModel:ObservableObject {
         catch {
             print("unable to fetch contacts")
         }
+    }
+}
+
+extension CNContact {
+    var getDisplayName:String {
+        var name = self.givenName
+        
+        if !self.middleName.isEmpty {
+            name += " \(self.middleName)"
+        }
+        
+        if !self.familyName.isEmpty {
+            name += " \(self.familyName)"
+        }
+        
+        if !self.nameSuffix.isEmpty {
+            name += " \(self.nameSuffix)"
+        }
+        return name
     }
 }
