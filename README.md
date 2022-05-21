@@ -25,3 +25,9 @@ Cloned default iOS phone app using SwiftUI and Xcode13.
 | 3      | Text, Button, Toolbar,  ToolbarItem         |
 | 4      | HStack, VStack       |
 | 5      | Picker            |
+
+
+
+## Author
+
+gokulgovind, gokulece26@gmail.com
