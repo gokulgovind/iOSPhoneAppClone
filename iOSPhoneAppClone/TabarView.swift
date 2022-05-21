@@ -29,7 +29,7 @@ struct TabarView: View {
                 }
             VoiceMailView()
                 .tabItem {
-                    Label("Voicemail", systemImage: "phone.and.waveform.fill")
+                    Label("Voicemail", systemImage: "recordingtape")
                 }
         }
     }

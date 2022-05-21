@@ -17,16 +17,17 @@ struct ContactsDetailView: View {
     }
     
     var body: some View {
-        
         NavigationView {
             VStack {
+                headerView
                 contactOptionView
+                    .frame(height: 60)
                 formView
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Edit") {
-
+                        
                     }
                 }
             }
@@ -44,6 +45,7 @@ struct ContactsDetailView: View {
                 .font(Font.title)
                 
             Text(contactinfo?.getDisplayName ?? "User Name")
+                .font(Font.largeTitle)
         }
         
     }
@@ -54,9 +56,9 @@ struct ContactsDetailView: View {
                 Image(systemName: "message.fill")
                 Text("message")
             }
-            
             .frame(maxWidth:.infinity, maxHeight: 60)
-            .background(Color.red)
+            .foregroundColor(Color.blue)
+            .background(Color.white)
             .cornerRadius(8)
 
             VStack {
@@ -64,7 +66,7 @@ struct ContactsDetailView: View {
                 Text("call")
             }
             .frame(maxWidth:.infinity, maxHeight: 60)
-            .background(Color.white)
+            .foregroundColor(Color.blue)
             .cornerRadius(8)
             
 
@@ -73,7 +75,7 @@ struct ContactsDetailView: View {
                 Text("video")
             }
             .frame(maxWidth:.infinity, maxHeight: 60)
-            .background(Color.white)
+            .foregroundColor(Color.blue)
             .cornerRadius(8)
 
             VStack {
@@ -81,10 +83,12 @@ struct ContactsDetailView: View {
                 Text("mail")
             }
             .frame(maxWidth:.infinity, maxHeight: 60)
-            .background(Color.white)
+            .foregroundColor(Color.blue)
             .cornerRadius(8)
         }
-        .listStyle(.grouped)
+        .padding(.horizontal, 16)
+        .padding(.vertical, 8)
+        .background(Color("dialpad_fg"))
     }
     
     var formView: some View {
@@ -106,14 +110,14 @@ struct ContactsDetailView: View {
                 
             }
             
-            Section() {
+            Section {
                 VStack {
                     Text("Notes")
                     Spacer(minLength: 70)
                 }
             }
             
-            Section() {
+            Section {
                 Button("Send Message") {
                     
                 }
@@ -127,19 +131,19 @@ struct ContactsDetailView: View {
                 }
             }
             
-            Section() {
+            Section {
                 Button("Add to Emergency Contacts") {
                     
                 }
             }
             
-            Section() {
+            Section {
                 Button("Share My Location") {
                     
                 }
             }
             
-            Section() {
+            Section {
                 Button("Block this Caller") {
                     
                 }
@@ -147,7 +151,6 @@ struct ContactsDetailView: View {
             }
             
         }
-        
     }
 }
 

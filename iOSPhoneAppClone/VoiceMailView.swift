@@ -9,7 +9,17 @@ import SwiftUI
 
 struct VoiceMailView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            Text("Call Voicemail")
+                .padding(.vertical, 4)
+                .padding(.horizontal, 26)
+                .foregroundColor(Color.secondary)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 6)
+                        .stroke(Color.secondary, lineWidth: 1)
+                )
+                .navigationTitle("Voicemail")
+        }
     }
 }
 

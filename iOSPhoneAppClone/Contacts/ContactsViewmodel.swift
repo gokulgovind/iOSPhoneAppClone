@@ -17,6 +17,7 @@ class ContactsViewModel:ObservableObject {
         let request = CNContactFetchRequest(keysToFetch: keys)
         
         let contactStore = CNContactStore()
+        contacts = [CNContact]()
         do {
             try contactStore.enumerateContacts(with: request) {
                 (contact, stop) in
