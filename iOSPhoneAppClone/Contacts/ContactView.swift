@@ -22,9 +22,9 @@ struct ContactView: View {
                     
                     Section {
                         ForEach(searchResult, id: \.identifier) { contact in
-                            NavigationLink(destination: ContactsDetailView(contactinfo: contact)) {
+//                            NavigationLink(destination: ContactsDetailView(contactinfo: contact)) {
                                 Text(contact.getDisplayName)
-                            }
+//                            }
                         }
                     }
                 }
