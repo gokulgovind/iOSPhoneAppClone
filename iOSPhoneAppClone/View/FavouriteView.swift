@@ -11,9 +11,9 @@ struct FavouriteView: View {
     var body: some View {
         NavigationView {
             List {
-                let dummy = ["Rakesh", "Bae", "Gokul"]
-                ForEach(dummy, id: \.self) { contact in
-                    FavouriteRow(name: contact)
+                let contacts = FavouriteContactModel.mockData
+                ForEach(contacts, id: \.id) { contact in
+                    FavouriteRow(contact: contact)
                 }
             }
             .listStyle(.plain)
@@ -53,18 +53,28 @@ struct FavouriteView_Previews: PreviewProvider {
 
 
 struct FavouriteRow: View {
-    var name: String
+    var contact: FavouriteContactModel
     
     var body: some View {
         HStack {
-            Image("mycard_placeholder")
-                .resizable()
-                .frame(maxWidth: 30, maxHeight: 30)
-                .clipShape(Circle())
+            if let image = contact.contactImage {
+                Image(image)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(maxWidth: 35, maxHeight: 35)
+                    .clipShape(Circle())
+            }else{
+                Text(String(contact.contactName.first!))
+                    .frame(maxWidth: 35, maxHeight: 35)
+                    .background(Color("name_placeholder_bg"))
+                    .foregroundColor(.white)
+                    .clipShape(Circle())
+            }
+            
             
 
-            VStack(alignment: .leading, spacing: 3) {
-                Text(name)
+//            VStack(alignment: .leading, spacing: 3) {
+                Text(contact.contactName)
                     .font(Font.headline)
                     .fontWeight(.semibold)
                 HStack {
@@ -72,7 +82,7 @@ struct FavouriteRow: View {
                         .resizable()
                         .frame(width: 12, height: 12, alignment: .center)
                         .foregroundColor(Color.gray)
-                    Text("phone")
+                    Text(contact.contactLabel)
                         .foregroundColor(Color.secondary)
                 }
             }
@@ -81,6 +91,8 @@ struct FavouriteRow: View {
                 
             }, label: {
                 Image(systemName:"info.circle")
+                    .resizable()
+                    .frame(width: 22, height: 22, alignment: .center)
                     .foregroundColor(Color.accentColor)
             })
         }

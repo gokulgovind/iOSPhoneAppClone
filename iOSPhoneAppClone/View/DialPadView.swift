@@ -109,9 +109,3 @@ struct DialPadView_Previews: PreviewProvider {
             .preferredColorScheme(.light)
     }
 }
-
-struct DialPadModel: Hashable, Identifiable {
-    var id = UUID()
-    var dialNumber: String
-    var dialValue: String
-}

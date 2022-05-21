@@ -12,9 +12,9 @@ struct RecentView: View {
     @State private var callType = 0
     @State private var isEditList:Bool = false
 
-    var recentList = RecentModel.mockData
+    var recentList = RecentContactModel.mockData
     
-    var getRecentCallList:[RecentModel] {
+    var getRecentCallList:[RecentContactModel] {
         if callType == 0 {
             return recentList
         }else{
@@ -67,7 +67,7 @@ struct RecentView_Previews: PreviewProvider {
 
 
 struct RecentListRow: View {
-    var contactInfo: RecentModel
+    var contactInfo: RecentContactModel
     
     var body: some View {
         HStack {
@@ -103,32 +103,3 @@ struct RecentListRow: View {
     }
 }
 
-
-struct RecentModel {
-    
-    enum CallType {
-        case missed
-        case received
-        case dialed
-    }
-    var id = UUID()
-    var contactName:String
-    var callTime:String
-    var callType: CallType
-    var contactLabel:String
-}
-
-extension RecentModel {
-    static var mockData:[RecentModel] {
-        return [
-            RecentModel(contactName: "Tim Cook", callTime: "10:30 AM", callType: .received, contactLabel: "phone"),
-            RecentModel(contactName: "Bae 🐝", callTime: "10:00 AM", callType: .dialed, contactLabel: "phone"),
-            RecentModel(contactName: "Mark Zuckerberg", callTime: "Yesterday", callType: .received, contactLabel: "phone"),
-            RecentModel(contactName: "Arun", callTime: "Yesterday", callType: .missed, contactLabel: "phone"),
-            RecentModel(contactName: "+91 7779876878", callTime: "Yesterday", callType: .received, contactLabel: "phone"),
-            RecentModel(contactName: "David Taylor", callTime: "Yesterday", callType: .dialed, contactLabel: "phone"),
-            RecentModel(contactName: "Anand Kumar (2)", callTime: "Yesterday", callType: .missed, contactLabel: "phone"),
-            RecentModel(contactName: "Akka", callTime: "Yesterday", callType: .received, contactLabel: "phone"),
-        ]
-    }
-}

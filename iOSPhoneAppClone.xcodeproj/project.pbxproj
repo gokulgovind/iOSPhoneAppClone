@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		090703BF283934A60028AF33 /* FavouriteContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090703BE283934A60028AF33 /* FavouriteContactModel.swift */; };
+		090703C1283934DF0028AF33 /* RecentContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090703C0283934DF0028AF33 /* RecentContactModel.swift */; };
+		090703C5283935650028AF33 /* DialpadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090703C4283935650028AF33 /* DialpadModel.swift */; };
 		09993D37282B775300A05699 /* iOSPhoneAppCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09993D36282B775300A05699 /* iOSPhoneAppCloneApp.swift */; };
 		09993D39282B775300A05699 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09993D38282B775300A05699 /* ContentView.swift */; };
 		09993D3B282B775300A05699 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09993D3A282B775300A05699 /* Assets.xcassets */; };
@@ -25,6 +28,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		090703BE283934A60028AF33 /* FavouriteContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteContactModel.swift; sourceTree = "<group>"; };
+		090703C0283934DF0028AF33 /* RecentContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentContactModel.swift; sourceTree = "<group>"; };
+		090703C4283935650028AF33 /* DialpadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialpadModel.swift; sourceTree = "<group>"; };
 		09993D33282B775300A05699 /* iOSPhoneAppClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSPhoneAppClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09993D36282B775300A05699 /* iOSPhoneAppCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSPhoneAppCloneApp.swift; sourceTree = "<group>"; };
 		09993D38282B775300A05699 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,6 +60,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		090703C2283934EB0028AF33 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				090703BE283934A60028AF33 /* FavouriteContactModel.swift */,
+				090703C0283934DF0028AF33 /* RecentContactModel.swift */,
+				09993D51282B776D00A05699 /* ContactModel.swift */,
+				090703C4283935650028AF33 /* DialpadModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		090703C3283935010028AF33 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				09993D4A282B776600A05699 /* TabarView.swift */,
+				09993D4B282B776600A05699 /* FavouriteView.swift */,
+				09993D4C282B776600A05699 /* RecentView.swift */,
+				09993D59282B779000A05699 /* DialPadView.swift */,
+				09993D5A282B779000A05699 /* VoiceMailView.swift */,
+				09993D57282B777500A05699 /* Contacts */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		09993D2A282B775300A05699 = {
 			isa = PBXGroup;
 			children = (
@@ -77,12 +107,8 @@
 				09993D38282B775300A05699 /* ContentView.swift */,
 				09993D3A282B775300A05699 /* Assets.xcassets */,
 				09993D3F282B775300A05699 /* Persistence.swift */,
-				09993D4A282B776600A05699 /* TabarView.swift */,
-				09993D4B282B776600A05699 /* FavouriteView.swift */,
-				09993D4C282B776600A05699 /* RecentView.swift */,
-				09993D57282B777500A05699 /* Contacts */,
-				09993D59282B779000A05699 /* DialPadView.swift */,
-				09993D5A282B779000A05699 /* VoiceMailView.swift */,
+				090703C2283934EB0028AF33 /* Model */,
+				090703C3283935010028AF33 /* View */,
 				09993D41282B775300A05699 /* iOSPhoneAppClone.xcdatamodeld */,
 				09993D3C282B775300A05699 /* Preview Content */,
 			);
@@ -100,7 +126,6 @@
 		09993D57282B777500A05699 /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
-				09993D51282B776D00A05699 /* ContactModel.swift */,
 				09993D52282B776D00A05699 /* ContactsViewmodel.swift */,
 				09993D53282B776E00A05699 /* ContactView.swift */,
 				09993D58282B779000A05699 /* ContactsDetailView.swift */,
@@ -184,13 +209,16 @@
 				09993D54282B776E00A05699 /* ContactModel.swift in Sources */,
 				09993D40282B775300A05699 /* Persistence.swift in Sources */,
 				09993D4E282B776600A05699 /* TabarView.swift in Sources */,
+				090703BF283934A60028AF33 /* FavouriteContactModel.swift in Sources */,
 				09993D39282B775300A05699 /* ContentView.swift in Sources */,
 				09993D5D282B779000A05699 /* VoiceMailView.swift in Sources */,
 				09993D4F282B776600A05699 /* FavouriteView.swift in Sources */,
 				09993D5B282B779000A05699 /* ContactsDetailView.swift in Sources */,
 				09993D55282B776E00A05699 /* ContactsViewmodel.swift in Sources */,
 				09993D37282B775300A05699 /* iOSPhoneAppCloneApp.swift in Sources */,
+				090703C5283935650028AF33 /* DialpadModel.swift in Sources */,
 				09993D50282B776600A05699 /* RecentView.swift in Sources */,
+				090703C1283934DF0028AF33 /* RecentContactModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
