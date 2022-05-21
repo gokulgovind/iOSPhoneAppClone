@@ -2,7 +2,9 @@
 Cloned default iOS phone app using SwiftUI and Xcode13. 
 
 ## Preview
-<video src="VideoPreview/phoneapp_clone_video.mp4" width=380/> 
+
+https://user-images.githubusercontent.com/18026746/169661628-04f775e6-5b6e-42dc-812c-95e7c1e99663.mp4
+
 
 ## Views 
 
