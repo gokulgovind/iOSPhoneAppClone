@@ -10,14 +10,7 @@ import SwiftUI
 struct FavouriteView: View {
     var body: some View {
         NavigationView {
-            List {
-                let contacts = FavouriteContactModel.mockData
-                ForEach(contacts, id: \.id) { contact in
-                    FavouriteRow(contact: contact)
-                }
-            }
-            .listStyle(.plain)
-            .navigationTitle("Favourites")
+            listView
             .toolbar {
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -41,6 +34,16 @@ struct FavouriteView: View {
             
     }
     
+    var listView: some View {
+        List {
+            let contacts = FavouriteContactModel.mockData
+            ForEach(contacts, id: \.id) { contact in
+                FavouriteRow(contact: contact)
+            }
+        }
+        .listStyle(.plain)
+        .navigationTitle("Favourites")
+    }
 }
 
 struct FavouriteView_Previews: PreviewProvider {
